@@ -227,7 +227,7 @@ public class Glavna {
 	ucitavac.nextLine();
 	Artikl odabraniArtikl = listaArtikalaKategorije.get(redniBrojArtikla - 1);
 	LocalDate datumObjave = LocalDate.now();
-	return new Prodaja(odabraniArtikl, odabraniKorisnik, datumObjave);
+	return new Prodaja(null, odabraniArtikl, odabraniKorisnik, datumObjave);
     }
 
     /**

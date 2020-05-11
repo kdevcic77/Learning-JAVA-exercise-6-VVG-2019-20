@@ -26,8 +26,8 @@ public class Stan extends Artikl implements Nekretnina {
      * @param stanje     podatak o stanju nekretnine
      * @param cijena     podatak o cijeni stana
      */
-    public Stan(String naslov, String opis, int kvadratura, Stanje stanje, BigDecimal cijena) {
-	super(naslov, opis, stanje, cijena);
+    public Stan(Long id, String naslov, String opis, int kvadratura, Stanje stanje, BigDecimal cijena) {
+	super(id, naslov, opis, stanje, cijena);
 	this.kvadratura = kvadratura;
     }
 

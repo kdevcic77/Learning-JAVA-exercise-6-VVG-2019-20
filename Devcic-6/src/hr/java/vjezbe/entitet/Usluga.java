@@ -20,8 +20,8 @@ public class Usluga extends Artikl {
      * @param stanje - podatak o stanju
      * @param cijena - podatak o cijeni usluge
      */
-    public Usluga(String naslov, String opis, Stanje stanje, BigDecimal cijena) {
-	super(naslov, opis, stanje, cijena);
+    public Usluga(Long id, String naslov, String opis, Stanje stanje, BigDecimal cijena) {
+	super(id, naslov, opis, stanje, cijena);
     }
 
     /**

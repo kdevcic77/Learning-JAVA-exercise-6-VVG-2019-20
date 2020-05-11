@@ -9,7 +9,7 @@ import java.time.LocalDate;
  * @author deva
  * @version Devcic-6
  */
-public class Prodaja {
+public class Prodaja extends Entitet {
     private Artikl artikl;
     private Korisnik korisnik;
     private LocalDate datumObjave;
@@ -19,8 +19,8 @@ public class Prodaja {
      * @param korisnik    - podatak o korisniku koji prodaje artikl
      * @param datumObjave - podatak o datumu objave prodaje artikla
      */
-    public Prodaja(Artikl artikl, Korisnik korisnik, LocalDate datumObjave) {
-	super();
+    public Prodaja(Long id, Artikl artikl, Korisnik korisnik, LocalDate datumObjave) {
+	super(id);
 	this.artikl = artikl;
 	this.korisnik = korisnik;
 	this.datumObjave = datumObjave;

@@ -18,8 +18,8 @@ public class PrivatniKorisnik extends Korisnik {
      * @param email   - podatak o email-u privatnog korisnika
      * @param telefon - podatak o broju telefona privatnog korisnika
      */
-    public PrivatniKorisnik(String ime, String prezime, String email, String telefon) {
-	super(email, telefon);
+    public PrivatniKorisnik(Long id, String ime, String prezime, String email, String telefon) {
+	super(id, email, telefon);
 	this.ime = ime;
 	this.prezime = prezime;
     }

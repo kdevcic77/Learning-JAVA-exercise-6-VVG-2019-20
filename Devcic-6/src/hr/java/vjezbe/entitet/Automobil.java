@@ -20,8 +20,8 @@ public class Automobil extends Artikl implements Vozilo {
     BigDecimal snagaKs;
 
     /**
-     * Inicijalizira podatak o naslovu, opisu, snazi u konjskim satima, stanju i cijeni
-     * automobila
+     * Inicijalizira podatak o naslovu, opisu, snazi u konjskim satima, stanju i
+     * cijeni automobila
      * 
      * @param naslov  - podatak o naslovu automobila
      * @param opis    - podatak o opisu automobila
@@ -29,8 +29,8 @@ public class Automobil extends Artikl implements Vozilo {
      * @param stanje  - podatak o stanju automobila
      * @param cijena  - podatak o cijeni automobila
      */
-    public Automobil(String naslov, String opis, BigDecimal snagaKs, Stanje stanje, BigDecimal cijena) {
-	super(naslov, opis, stanje, cijena);
+    public Automobil(Long id, String naslov, String opis, BigDecimal snagaKs, Stanje stanje, BigDecimal cijena) {
+	super(id, naslov, opis, stanje, cijena);
 	this.snagaKs = snagaKs;
     }
 
@@ -93,8 +93,8 @@ public class Automobil extends Artikl implements Vozilo {
 	    logger.error(e.getMessage(), e);
 	}
 	String tekstOglasa = ("\nNaslov automobila: " + getNaslov() + "\nOpis automobila: " + getOpis()
-		+ "\nSnaga automobila: " + getSnagaKs() + "\nStanje automobila: "+ getStanje()+"\nCijena osiguranja " + izracunCijeneOsiguranja
-		+ "\nCijena automobila: " + getCijena());
+		+ "\nSnaga automobila: " + getSnagaKs() + "\nStanje automobila: " + getStanje() + "\nCijena osiguranja "
+		+ izracunCijeneOsiguranja + "\nCijena automobila: " + getCijena());
 	return tekstOglasa;
     }
 

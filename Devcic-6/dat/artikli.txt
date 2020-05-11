@@ -1,0 +1,35 @@
+2
+1
+BMW
+BMW M5
+625
+2
+1100000
+2
+2
+BMW
+BMW 320d
+190
+1
+350000
+2
+3
+Alfa Romeo
+Alfa Romeo 147 skoro ispravna, savršeno stanje
+150
+4
+20000
+3
+4
+Ravnice
+Prekrasan stan
+75
+3
+1000000
+3
+5
+Kvatriæ
+Državni stan, derutan
+30
+4
+200000

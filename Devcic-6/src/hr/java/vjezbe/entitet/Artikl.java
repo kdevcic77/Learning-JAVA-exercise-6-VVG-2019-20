@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  * @author deva
  * @version Devcic-6
  */
-public abstract class Artikl {
+public abstract class Artikl extends Entitet {
     private String naslov;
     private String opis;
     private BigDecimal cijena;
@@ -21,9 +21,10 @@ public abstract class Artikl {
      * @param naslov - podatak o naslovu artikla
      * @param opis   - podatak o opisu artikla
      * @param cijena - podatak o cijeni artikla
+     * @param id
      */
-    public Artikl(String naslov, String opis, Stanje stanje, BigDecimal cijena) {
-	super();
+    public Artikl(Long id, String naslov, String opis, Stanje stanje, BigDecimal cijena) {
+	super(id);
 	this.naslov = naslov;
 	this.opis = opis;
 	this.stanje = stanje;

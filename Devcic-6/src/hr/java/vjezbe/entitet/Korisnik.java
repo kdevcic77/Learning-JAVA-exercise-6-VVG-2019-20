@@ -7,7 +7,7 @@ package hr.java.vjezbe.entitet;
  * @author deva
  * @version Devcic-6
  */
-public abstract class Korisnik {
+public abstract class Korisnik extends Entitet {
 
     protected String email;
     protected String telefon;
@@ -18,8 +18,8 @@ public abstract class Korisnik {
      * @param email   - podataka o email-u korisnika
      * @param telefon - podataka o broju telefona korisnika
      */
-    public Korisnik(String email, String telefon) {
-	super();
+    public Korisnik(Long id, String email, String telefon) {
+	super(id);
 	this.email = email;
 	this.telefon = telefon;
     }

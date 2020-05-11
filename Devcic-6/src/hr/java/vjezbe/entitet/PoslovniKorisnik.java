@@ -20,8 +20,8 @@ public class PoslovniKorisnik extends Korisnik {
      * @param email   - podatak o email-u poslovnog korisnika
      * @param telefon - podatak o broju telefona poslovnog korisnika
      */
-    public PoslovniKorisnik(String naziv, String web, String email, String telefon) {
-	super(email, telefon);
+    public PoslovniKorisnik(Long id, String naziv, String web, String email, String telefon) {
+	super(id, email, telefon);
 	this.naziv = naziv;
 	this.web = web;
     }

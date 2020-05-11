@@ -10,7 +10,7 @@ import java.util.List;
  * @author deva
  * @version Devcic-6
  */
-public class Kategorija<T extends Artikl> {
+public class Kategorija<T extends Artikl> extends Entitet {
     private String naziv;
     private List<T> listaArtikala = new ArrayList<T>();
 
@@ -20,8 +20,8 @@ public class Kategorija<T extends Artikl> {
      * @param naziv   - podatak o nazivu kategorije
      * @param artikli - podatak o artiklima koji se nalaze u kateogoriji
      */
-    public Kategorija(String naziv, List<T> listaArtikala) {
-	super();
+    public Kategorija(Long id, String naziv, List<T> listaArtikala) {
+	super(id);
 	this.naziv = naziv;
 	this.listaArtikala = listaArtikala;
     }
