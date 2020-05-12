@@ -100,15 +100,15 @@ public class GlavnaDatoteke {
 //	}
 //	listaArtikala.stream().forEach(System.out::println);
 
-	Map<Long, Korisnik> mapaKorisnika = new HashMap<>();
-	Map<Long, Artikl> mapaArtikala = new HashMap<>();
-	Map<Long, Kategorija<?>> mapaKategorija = new HashMap<>();
-	Map<Long, Prodaja> mapaProdaja = new HashMap<>();
+//	Map<Long, Korisnik> mapaKorisnika = new HashMap<>();
+//	Map<Long, Artikl> mapaArtikala = new HashMap<>();
+//	Map<Long, Kategorija<?>> mapaKategorija = new HashMap<>();
+//	Map<Long, Prodaja> mapaProdaja = new HashMap<>();
 
-	mapaKorisnika = kreiranjeObjekataKorisnika(listaKorisnika);
+//	mapaKorisnika = kreiranjeObjekataKorisnika(listaKorisnika);
 //	mapaArtikala = kreiranjeObjekataArtikala(listaArtikala);
-	mapaKategorija = kreiranjeObjekataKategorija(listaKategorija);
-	mapaProdaja = kreiranjeObjekataProdaja(listaProdaja);
+//	mapaKategorija = kreiranjeObjekataKategorija(listaKategorija);
+//	mapaProdaja = kreiranjeObjekataProdaja(listaProdaja);
 
     }
 
