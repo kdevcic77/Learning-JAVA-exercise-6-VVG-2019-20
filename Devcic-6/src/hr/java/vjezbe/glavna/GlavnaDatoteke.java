@@ -7,7 +7,10 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,15 +34,17 @@ public class GlavnaDatoteke {
     private static final String FILE_KORISNICI = "dat/korisnici.txt";
     private static final String FILE_ARTIKLI = "dat/artikli.txt";
     private static final String FILE_KATEGORIJE = "dat/kategorije.txt";
+    private static final String FILE_PRODAJE = "dat/prodaje.txt";
 
     private static final int BROJ_LINIJA_KATEGORIJE = 3;
+    private static final int BROJ_LINIJA_PRODAJE = 4;
 
     public static void main(String[] args) {
 
 	List<Korisnik> listaKorisnika = new ArrayList<>();
 	List<Artikl> listaArtikala = new ArrayList<>();
 	List<Kategorija<?>> listaKategorija = new ArrayList<>();
-	List<String> listaProdaja = new ArrayList<>();
+	List<Prodaja> listaProdaja = new ArrayList<>();
 
 	System.out.println("Uèitavanje korisnika...");
 	listaKorisnika = dohvatiKorisnike();
@@ -48,7 +53,45 @@ public class GlavnaDatoteke {
 	System.out.println("Uèitavanje kategorija...");
 	listaKategorija = dohvatiKategorije(listaArtikala);
 	System.out.println("Uèitavanje prodaja...");
-	listaProdaja = dohvatiProdaje();
+	listaProdaja = dohvatiProdaje(listaArtikala, listaKorisnika);
+
+	System.out.println("Trenutno su oglasi na prodaju:");
+	System.out.print(horizontalIsprekidanaLine());
+	for (Prodaja prodaja : listaProdaja) {
+	    System.out.print(prodaja.getArtikl().tekstOglasa());
+	    LocalDate datumObjave = prodaja.getDatumObjave();
+	    String datumObjaveString = datumObjave.format(DateTimeFormatter.ofPattern(FORMAT_DATUMA));
+	    System.out.println("\nDatum objave: " + datumObjaveString);
+	    System.out.println(prodaja.getKorisnik().dohvatiKontakt());
+	    System.out.print(horizontalIsprekidanaLine());
+	}
+	System.out.println("\nIspis po kategorijama:");
+	for (Kategorija<?> kategorija : listaKategorija) {
+	    System.out.print(horizontalIsprekidanaLine());
+	    System.out.println("\nKategorija: " + kategorija.getNaziv());
+	    List<Artikl> listaArtikalaKategorije = new ArrayList<>(kategorija.dohvatiListuArtikala());
+
+//	    izbacivanje korištenja sortiranja uz pomoæ paketa "hr.java.vjezbe.sortiranje" i klase "ArtiklSorter"
+//	    Collections.sort(listaArtikalaKategorije, new ArtiklSorter());
+
+//          Lambda izraz sa tipom infomracije parametara klase koje želimo usporediti   
+//	    Collections.sort(listaArtikalaKategorije,
+//		    (Artikl p1, Artikl p2) -> p1.getNaslov().compareTo(p2.getNaslov()));
+//          Lambda izraz sa micanjem tipa informacije koji želimo usporediti
+
+	    Collections.sort(listaArtikalaKategorije, (p1, p2) -> p1.getNaslov().compareTo(p2.getNaslov()));
+
+//	    ZAMJENA FOR PETLJI LISTE LAMBDA IZRAZOM	
+//	    for (Artikl artiklKategorije : listaArtikalaKategorije) {
+//		System.out.print(horizontalIsprekidanaLine());
+//		System.out.println(artiklKategorije.tekstOglasa());
+//	    }
+
+	    listaArtikalaKategorije.forEach(s -> {
+		System.out.print(horizontalIsprekidanaLine());
+		System.out.println(s.tekstOglasa());
+	    });
+	}
 
 //	listaKategorija.stream().forEach(System.out::println);
 
@@ -69,14 +112,51 @@ public class GlavnaDatoteke {
 
     }
 
-    private static Map<Long, Prodaja> kreiranjeObjekataProdaja(List<String> listaProdaja) {
+    private static Map<Long, Prodaja> kreiranjeObjekataProdaja(List<Prodaja> listaProdaja) {
 	Map<Long, Prodaja> mapaProdaja = new HashMap<>();
 
 	return mapaProdaja;
     }
 
-    private static List<String> dohvatiProdaje() {
-	List<String> listaProdaja = new ArrayList<>();
+    private static List<Prodaja> dohvatiProdaje(List<Artikl> listaArtikala, List<Korisnik> listaKorisnika) {
+	List<String> stringListaProdaja = new ArrayList<>();
+	List<Prodaja> listaProdaja = new ArrayList<>();
+
+	Long idProdaje = null;
+	Integer idArtikl = null;
+	Artikl artikl = null;
+	Korisnik korisnik = null;
+	Integer idKorisnik = null;
+	String stringDatumObjave = null;
+
+	try (Stream<String> stream = Files.lines(new File(FILE_PRODAJE).toPath(), Charset.forName("ISO-8859-2"))) {
+	    stringListaProdaja = stream.collect(Collectors.toList());
+	} catch (IOException e) {
+	    e.printStackTrace();
+	}
+	for (int i = 0; i < stringListaProdaja.size(); i++) {
+	    String linija = stringListaProdaja.get(i);
+	    switch (i % BROJ_LINIJA_PRODAJE) {
+	    case 0:
+		idProdaje = Long.parseLong(linija);
+		break;
+	    case 1:
+		idArtikl = Integer.parseInt(linija);
+		artikl = listaArtikala.get(idArtikl - 1);
+		break;
+	    case 2:
+		idKorisnik = Integer.parseInt(linija);
+		korisnik = listaKorisnika.get(idKorisnik - 1);
+		break;
+	    case 3:
+		stringDatumObjave = linija;
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(FORMAT_DATUMA);
+		LocalDate datumObjave = LocalDate.parse(stringDatumObjave, formatter);
+		listaProdaja.add(new Prodaja(idProdaje, artikl, korisnik, datumObjave));
+		break;
+	    }
+
+	}
 
 	return listaProdaja;
     }
@@ -93,7 +173,6 @@ public class GlavnaDatoteke {
 
 	Long id = null;
 	String naziv = null;
-	
 
 	try (BufferedReader bufferedCitac = new BufferedReader(new FileReader(FILE_KATEGORIJE))) {
 	    while (true) {
@@ -125,7 +204,7 @@ public class GlavnaDatoteke {
 
 		}
 		for (int idArtikl : idArtikala) {
-		    listaArtikalaKategorije.add(listaArtikala.get(idArtikl-1));
+		    listaArtikalaKategorije.add(listaArtikala.get(idArtikl - 1));
 		}
 
 		listaKategorija.add(new Kategorija(id, naziv, listaArtikalaKategorije));
@@ -317,5 +396,18 @@ public class GlavnaDatoteke {
 	    }
 	}
 	return listaKorisnika;
+    }
+
+    /**
+     * @return vraæa horizontalnu iscrtanu liniju za odjeljivanje bitnih dijelova
+     *         kod ispisa rezultata
+     */
+    private static String horizontalIsprekidanaLine() {
+	String isprekidanaLinija = "";
+	for (int j = 0; j < 100; j++) {
+	    isprekidanaLinija += "-";
+	}
+	return isprekidanaLinija;
+
     }
 }

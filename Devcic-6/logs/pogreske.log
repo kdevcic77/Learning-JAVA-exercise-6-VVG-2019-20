@@ -253,3 +253,73 @@ hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilik
 	at java.base/java.util.HashMap$KeySet.forEach(HashMap.java:933)
 	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:154)
 2020-04-25 09:28:47,273 INFO [main] h.j.v.g.Glavna [Glavna.java:54] Pokretanje programa
+2020-05-12 21:35:30,704 ERROR [main] h.j.v.e.Automobil [Automobil.java:93] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:75)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:50)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:90)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.main(GlavnaDatoteke.java:61)
+2020-05-12 21:35:30,719 ERROR [main] h.j.v.e.Automobil [Automobil.java:93] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:75)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:50)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:90)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.lambda$1(GlavnaDatoteke.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.main(GlavnaDatoteke.java:90)
+2020-05-12 21:36:58,415 ERROR [main] h.j.v.e.Automobil [Automobil.java:93] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:75)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:50)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:90)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.main(GlavnaDatoteke.java:61)
+2020-05-12 21:36:58,427 ERROR [main] h.j.v.e.Automobil [Automobil.java:93] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:75)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:50)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:90)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.lambda$1(GlavnaDatoteke.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.main(GlavnaDatoteke.java:90)
+2020-05-12 21:37:30,254 ERROR [main] h.j.v.e.Automobil [Automobil.java:93] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:75)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:50)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:90)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.main(GlavnaDatoteke.java:61)
+2020-05-12 21:37:30,269 ERROR [main] h.j.v.e.Automobil [Automobil.java:93] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:75)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:50)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:90)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.lambda$1(GlavnaDatoteke.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.main(GlavnaDatoteke.java:90)
+2020-05-12 21:38:44,377 ERROR [main] h.j.v.e.Automobil [Automobil.java:93] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:75)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:50)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:90)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.main(GlavnaDatoteke.java:61)
+2020-05-12 21:38:44,389 ERROR [main] h.j.v.e.Automobil [Automobil.java:93] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:75)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:50)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:90)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.lambda$1(GlavnaDatoteke.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.main(GlavnaDatoteke.java:90)
+2020-05-12 21:39:26,533 ERROR [main] h.j.v.e.Automobil [Automobil.java:93] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:75)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:50)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:90)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.main(GlavnaDatoteke.java:61)
+2020-05-12 21:39:26,545 ERROR [main] h.j.v.e.Automobil [Automobil.java:93] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:75)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:50)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:90)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.lambda$1(GlavnaDatoteke.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+	at hr.java.vjezbe.glavna.GlavnaDatoteke.main(GlavnaDatoteke.java:90)
